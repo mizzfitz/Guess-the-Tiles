@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block history %}
+	<ul>
+		{% for guess in guesses %}
+			<li>
+				{% for col in guess.guess %}
+					<span>{{ col }}</span>
+				{% endfor %}
+				<br>
+				{% for col in guess.hint %}
+					<span>{{ col }}</span>
+				{% endfor %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+
+{% block guess %}
+<form action="{{ url_for('index') }}" method="post">
+		<div class="col_choice">
+			<h6>First Tile</h6>
+			<input type="radio" name="col1" value="red">Red
+			<input type="radio" name="col1" value="blue">Blue
+			<input type="radio" name="col1" value="green">Green
+			<input type="radio" name="col1" value="yellow">Yellow
+			<input type="radio" name="col1" value="black">Black
+			<input type="radio" name="col1" value="white">White
+		</div>
+		<div class="col_choice">
+			<h6>Second Tile</h6>
+			<input type="radio" name="col2" value="red">Red
+			<input type="radio" name="col2" value="blue">Blue
+			<input type="radio" name="col2" value="green">Green
+			<input type="radio" name="col2" value="yellow">Yellow
+			<input type="radio" name="col2" value="black">Black
+			<input type="radio" name="col2" value="white">White
+		</div>
+		<div class="col_choice">
+			<h6>First Tile</h6>
+			<input type="radio" name="col3" value="red">Red
+			<input type="radio" name="col3" value="blue">Blue
+			<input type="radio" name="col3" value="green">Green
+			<input type="radio" name="col3" value="yellow">Yellow
+			<input type="radio" name="col3" value="black">Black
+			<input type="radio" name="col3" value="white">White
+		</div>
+		<div class="col_choice">
+			<h6>First Tile</h6>
+			<input type="radio" name="col4" value="red">Red
+			<input type="radio" name="col4" value="blue">Blue
+			<input type="radio" name="col4" value="green">Green
+			<input type="radio" name="col4" value="yellow">Yellow
+			<input type="radio" name="col4" value="black">Black
+			<input type="radio" name="col4" value="white">White
+		</div>
+		<input type="submit" value="submit">
+	</form>
+{% endblock %}

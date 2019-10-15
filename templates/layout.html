@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Guess the Hidden Tiles!</title>
+		<meta lang="en-us">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="header">
+			<h1>Guess the Hidden Tiles!</h1>
+			<p>Guess the collor and position of the hidden tiles.  For each correct collor in the correct place a black will be displayed, for each correct collor in the wrong place a white will be displayed and for each incorrect collor a gray will be displayed.</p>
+		</div>
+		<div class="game">
+			{% block history %}
+			{% endblock %}
+
+			{% block guess %}
+			{% endblock %}
+		</div>
+	</body>
+</html>
