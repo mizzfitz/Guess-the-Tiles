@@ -1,59 +1,62 @@
 {% extends "layout.html" %}
 
 {% block history %}
-	<ul>
+	<div class="guess-hist">
 		{% for guess in guesses %}
-			<li>
+			<div class="guess">
 				{% for col in guess.guess %}
-					<span>{{ col }}</span>
+					<div class="collor" style="background-color:{{ col }};"></div>
 				{% endfor %}
-				<br>
+				<div class="hint">
 				{% for col in guess.hint %}
-					<span>{{ col }}</span>
+					<div class="hint-tile" style="background-color:{{ col }};"></div>
 				{% endfor %}
-			</li>
+				</div>
+			</div>
 		{% endfor %}
-	</ul>
+	</div>
 {% endblock %}
 
 {% block guess %}
+<div class="entry">
 <form action="{{ url_for('index') }}" method="post">
 		<div class="col_choice">
 			<h6>First Tile</h6>
-			<input type="radio" name="col1" value="red">Red
-			<input type="radio" name="col1" value="blue">Blue
-			<input type="radio" name="col1" value="green">Green
-			<input type="radio" name="col1" value="yellow">Yellow
-			<input type="radio" name="col1" value="black">Black
-			<input type="radio" name="col1" value="white">White
+			<input type="radio" name="col1" value="Red">Red
+			<input type="radio" name="col1" value="Blue">Blue
+			<input type="radio" name="col1" value="Green">Green
+			<input type="radio" name="col1" value="Yellow">Yellow
+			<input type="radio" name="col1" value="Black">Black
+			<input type="radio" name="col1" value="White">White
 		</div>
 		<div class="col_choice">
 			<h6>Second Tile</h6>
-			<input type="radio" name="col2" value="red">Red
-			<input type="radio" name="col2" value="blue">Blue
-			<input type="radio" name="col2" value="green">Green
-			<input type="radio" name="col2" value="yellow">Yellow
-			<input type="radio" name="col2" value="black">Black
-			<input type="radio" name="col2" value="white">White
+			<input type="radio" name="col2" value="Red">Red
+			<input type="radio" name="col2" value="Blue">Blue
+			<input type="radio" name="col2" value="Green">Green
+			<input type="radio" name="col2" value="Yellow">Yellow
+			<input type="radio" name="col2" value="Black">Black
+			<input type="radio" name="col2" value="White">White
 		</div>
 		<div class="col_choice">
 			<h6>First Tile</h6>
-			<input type="radio" name="col3" value="red">Red
-			<input type="radio" name="col3" value="blue">Blue
-			<input type="radio" name="col3" value="green">Green
-			<input type="radio" name="col3" value="yellow">Yellow
-			<input type="radio" name="col3" value="black">Black
-			<input type="radio" name="col3" value="white">White
+			<input type="radio" name="col3" value="Red">Red
+			<input type="radio" name="col3" value="Blue">Blue
+			<input type="radio" name="col3" value="Green">Green
+			<input type="radio" name="col3" value="Yellow">Yellow
+			<input type="radio" name="col3" value="Black">Black
+			<input type="radio" name="col3" value="White">White
 		</div>
 		<div class="col_choice">
 			<h6>First Tile</h6>
-			<input type="radio" name="col4" value="red">Red
-			<input type="radio" name="col4" value="blue">Blue
-			<input type="radio" name="col4" value="green">Green
-			<input type="radio" name="col4" value="yellow">Yellow
-			<input type="radio" name="col4" value="black">Black
-			<input type="radio" name="col4" value="white">White
+			<input type="radio" name="col4" value="Red">Red
+			<input type="radio" name="col4" value="Blue">Blue
+			<input type="radio" name="col4" value="Green">Green
+			<input type="radio" name="col4" value="Yellow">Yellow
+			<input type="radio" name="col4" value="Black">Black
+			<input type="radio" name="col4" value="White">White
 		</div>
-		<input type="submit" value="submit">
+		<input id="submit" type="submit" value="submit">
 	</form>
+</div>
 {% endblock %}

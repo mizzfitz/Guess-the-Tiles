@@ -2,13 +2,22 @@
 
 {% block history %}
 	<h2>Congratulations!  You Win!</h2>
-		{% for col in guess.guess %}
-			<span>{{ col }}</span>
-		{% endfor %}
+	<div class="guess-hist">
+			<div class="guess">
+				{% for col in guess.guess %}
+					<div class="collor" style="background-color:{{ col }};"></div>
+				{% endfor %}
+				<div class="hint">
+				{% for col in guess.hint %}
+					<div class="hint-tile" style="background-color:{{ col }};"></div>
+				{% endfor %}
+				</div>
+			</div>
+	</div>
 {% endblock %}
 
 {% block guess %}
-	<form action="{{ url_for('reset') }}" method="POST">
+	<form action="{{ url_for('index') }}" method="GET">
 		<input type="submit" value="Reset">
 	</form>
 {% endblock %}

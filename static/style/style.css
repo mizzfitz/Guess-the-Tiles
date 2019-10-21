@@ -1,0 +1,77 @@
+body{
+	font-family: arial, sans-serif;
+}
+
+.header{
+	border-bottom: 1px solid black;
+}
+
+.game{
+	width: 80%;
+}
+
+.guess, .entry{
+	width: 100%;
+	border: 1px solid black;
+	padding: 15px;
+	margin-top: 15px;
+}
+
+.guess, .hint, .game{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.collor{
+	width: 40px;
+	height: 40px;
+}
+
+.collor, .hint, .game{
+	margin-top: 10px;
+}
+
+.collor, .hint, .hint-tile{
+	padding: 1px;
+	border: 1px solid black;
+}
+
+.hint{
+	height: 44px;
+	width: 44px;
+	padding: 4px;
+}
+
+.hint-tile{
+	width: 14px;
+	height: 14px;
+}
+
+#submit{
+	margin: 10px;
+}
+
+@media (max-width: 500px){
+	.game{
+		width: 100%;
+	}
+
+	.collor{
+		height: 30px;
+		width: 30px;
+	}
+
+	.hint{
+		height: 22px;
+		width: 22px;
+		padding: 2px;
+	}
+
+	.hint-tile{
+		width: 7px;
+		height: 7px;
+	}
+}
+
